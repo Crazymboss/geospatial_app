@@ -1,0 +1,12 @@
+<h1>Tickets</h1>
+<div class="ml-8">
+  <% @tickets.each do |ticket| %>
+    <pre>
+      <strong>Ticket ID:</strong><%=ticket.id%>
+        Req. Number: <%=link_to ticket.request_number, ticket_path(ticket)%>
+        Seq. Number: <%=ticket.sequence_number%>
+        Excavator Company Name: <%=ticket&.excavators&.first&.company_name%>
+    </pre>
+  <%end%>
+</div>
+
